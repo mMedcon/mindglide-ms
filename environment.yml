@@ -1,0 +1,19 @@
+name: medon
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - scikit-learn
+  - pytorch
+  - torchvision
+  - jupyter
+  - matplotlib
+  - pip
+  - pip:
+      - nibabel
+      - tqdm
+      - opencv-python
+
