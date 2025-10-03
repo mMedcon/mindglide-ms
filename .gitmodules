@@ -4,3 +4,6 @@
 [submodule "models/mindglide"]
 	path = models/mindglide
 	url = https://github.com/mMedcon/mindGlide
+[submodule "data/msseg1"]
+	path = data/msseg1
+	url = https://github.com/muschellij2/open_ms_data.git
