@@ -1,0 +1,3 @@
+[submodule "models/models/mindglide"]
+	path = models/models/mindglide
+	url = https://github.com/mMedcon/mindGlide
