@@ -47,7 +47,7 @@ git submodule update --init --recursive
 
 ---
 
-### 2️⃣ Setup (Optional)
+### Setup
 
 If you’re not using Docker, create the environment manually:
 
@@ -58,7 +58,7 @@ conda activate mindglide
 
 ---
 
-### 3️⃣ Running Inference with Docker 🐳
+### Running Inference with Docker 🐳
 
 This repo uses a prebuilt Docker image:
 **`mspinpoint/mindglide:may2024`**
@@ -85,7 +85,7 @@ Simply change `PATIENT_ID="patient02"` for the next patient.
 
 ---
 
-### 4️⃣ Updating Submodules
+### Updating Submodules
 
 If you want the latest version of either dataset or model:
 
@@ -101,7 +101,7 @@ git commit -m "Update submodules to latest versions"
 
 ---
 
-## 🧩 Components Overview
+## Components Overview
 
 | Component                 | Description                                                           |
 | ------------------------- | --------------------------------------------------------------------- |
@@ -116,13 +116,13 @@ git commit -m "Update submodules to latest versions"
 
 After running inference, results typically include:
 
-* Predicted lesion mask (`*_pred.nii.gz`)
+* Predicted lesion mask (`*_seg.nii.gz`)
 * Overlap metrics (Dice score, volume difference, etc.)
 * Visualization notebooks for lesion overlays
 
 ---
 
-## ⚖️ License
+## License
 
 This project is distributed under the **MIT License**.
 Please review dataset licenses (MSSEG1) before redistribution.
@@ -135,12 +135,6 @@ Please review dataset licenses (MSSEG1) before redistribution.
 * [muschellij2/open_ms_data](https://github.com/muschellij2/open_ms_data) for the open dataset
 * The open-source neuroimaging community for tool support (NiBabel, MONAI, PyTorch)
 
----
-
-## 📧 Contact
-
-For questions or collaboration, reach out to **Sadaf Habib**
-📩 [email@example.com](mailto:email@example.com) (replace with your email)
 
 ---
 
@@ -149,8 +143,3 @@ For questions or collaboration, reach out to **Sadaf Habib**
 ```
 
 ---
-
-If you want, I can also **add a multi-patient loop example** directly into the README so users can process all patients automatically with Docker. That makes it fully plug-and-play.  
-
-Do you want me to add that?
-```
