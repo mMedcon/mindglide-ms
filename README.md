@@ -1,33 +1,28 @@
-```markdown
-# MindGlide-MS  
+
+
+# MindGlide-MS
+
 **Automated Multiple Sclerosis Lesion Segmentation using Deep Learning**
 
-MindGlide-MS integrates the **MindGlide** lesion segmentation model with open-access **MSSEG1 MRI datasets** to enable automated, reproducible lesion detection and evaluation on MRI scans of MS patients.  
-This repository wraps data, models, and processing pipelines inside a Docker environment for easy deployment.
+MindGlide-MS integrates the **MindGlide** lesion segmentation model with the open-access **MSSEG1 MRI dataset**, enabling automated and reproducible lesion detection on MRI scans of MS patients. The repository includes all data, models, and processing pipelines packaged within a Docker environment for easy setup and deployment.
 
 ---
 
 ## Repository Structure
 
 ```
-
-
 mindglide-ms/
-│
 ├── data/
-│   └── msseg1/                # Submodule: Open MS Dataset ([https://github.com/muschellij2/open_ms_data](https://github.com/muschellij2/open_ms_data))
-│
+│   └── msseg1/            # Submodule: Open MS Dataset (https://github.com/muschellij2/open_ms_data)
 ├── models/
-│   └── mindglide/             # Submodule: MindGlide segmentation model ([https://github.com/mMedcon/mindGlide](https://github.com/mMedcon/mindGlide))
-│
-├── notebooks/                 # Example analysis and visualization notebooks
-├── src/                       # Helper scripts for preprocessing / evaluation
-├── environment.yml            # Conda environment specification
-├── Makefile                   # Optional build commands
+│   └── mindglide/         # Submodule: MindGlide segmentation model (https://github.com/mMedcon/mindGlide)
+├── notebooks/             # Example analysis and visualization notebooks
+├── src/                   # Helper scripts for preprocessing / evaluation
+├── environment.yml        # Conda environment specification
+├── Makefile               # Optional build commands
 ├── LICENSE
 └── README.md
-
-````
+```
 
 ---
 
@@ -38,7 +33,14 @@ mindglide-ms/
 ```bash
 git clone --recurse-submodules https://github.com/mMedcon/mindglide-ms.git
 cd mindglide-ms
-````
+```
+
+This ensures all submodules (data and models) are cloned alongside the main repository.
+
+---
+
+If you want, I can also rewrite the **installation and usage section** next to make it GitHub-ready and beginner-friendly. Do you want me to do that?
+
 
 If you already cloned without `--recurse-submodules`, run:
 
