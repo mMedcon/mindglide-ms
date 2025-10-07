@@ -1,7 +1,3 @@
-Perfect ✅ — here’s a clean, professional **`README.md`** for your `mindglide-ms` repo, written so that **someone cloning it for the first time** knows exactly how to set it up, run inference, and understand the submodule structure.
-
----
-
 ```markdown
 # 🧠 MindGlide-MS  
 **Automated Multiple Sclerosis Lesion Segmentation using Deep Learning**
@@ -70,7 +66,7 @@ This repo uses a prebuilt Docker image:
 Make sure Docker and NVIDIA GPU drivers are installed, then run:
 
 ```bash
-Using a Bash variable for the patient
+# Set the patient ID
 PATIENT_ID="patient01"
 
 docker run --ipc=host --ulimit memlock=-1 -it --rm \
@@ -83,16 +79,9 @@ docker run --ipc=host --ulimit memlock=-1 -it --rm \
     --model_file_paths /mnt/models/_20240404_conjurer_trained_dice_7733.pt \
     --scan_path /mnt/data/msseg1/cross_sectional/MNI/${PATIENT_ID}/FLAIR_N4_noneck_reduced_winsor_regtoFLAIR_brain_N4_regtoMNI.nii.gz \
     --gold_standard_path /mnt/data/msseg1/cross_sectional/MNI/${PATIENT_ID}/lesion_mask_goldstandard.nii.gz
-
-
-Simply change PATIENT_ID="patient02" for the next patient.
 ```
 
-This command:
-
-* Mounts your local repository into Docker (`/mnt`)
-* Runs MindGlide’s inference script on a **FLAIR MRI scan**
-* Generates predicted lesion masks and performance metrics
+Simply change `PATIENT_ID="patient02"` for the next patient.
 
 ---
 
@@ -151,7 +140,7 @@ Please review dataset licenses (MSSEG1) before redistribution.
 ## 📧 Contact
 
 For questions or collaboration, reach out to **Sadaf Habib**
-📩 [[email@example.com](mailto:email@example.com)] (replace with your email)
+📩 [email@example.com](mailto:email@example.com) (replace with your email)
 
 ---
 
@@ -161,7 +150,7 @@ For questions or collaboration, reach out to **Sadaf Habib**
 
 ---
 
-Would you like me to make this version a bit more **research-paper style** (with sections like *“Introduction”, “Methods”, “Results”, “Usage”*) — or keep it like this **developer-facing setup guide** version?
+If you want, I can also **add a multi-patient loop example** directly into the README so users can process all patients automatically with Docker. That makes it fully plug-and-play.  
+
+Do you want me to add that?
 ```
-
-
