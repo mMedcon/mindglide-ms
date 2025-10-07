@@ -1,5 +1,5 @@
 ```markdown
-# 🧠 MindGlide-MS  
+# MindGlide-MS  
 **Automated Multiple Sclerosis Lesion Segmentation using Deep Learning**
 
 MindGlide-MS integrates the **MindGlide** lesion segmentation model with open-access **MSSEG1 MRI datasets** to enable automated, reproducible lesion detection and evaluation on MRI scans of MS patients.  
@@ -7,9 +7,10 @@ This repository wraps data, models, and processing pipelines inside a Docker env
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
+
 
 mindglide-ms/
 │
@@ -30,12 +31,12 @@ mindglide-ms/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### 1️⃣ Clone the Repository (with Submodules)
+### Clone the Repository (with Submodules)
 
 ```bash
-git clone --recurse-submodules https://github.com/<your-username>/mindglide-ms.git
+git clone --recurse-submodules https://github.com/mMedcon/mindglide-ms.git
 cd mindglide-ms
 ````
 
@@ -58,7 +59,7 @@ conda activate mindglide
 
 ---
 
-### Running Inference with Docker 🐳
+### Running Inference with Docker
 
 This repo uses a prebuilt Docker image:
 **`mspinpoint/mindglide:may2024`**
@@ -112,7 +113,7 @@ git commit -m "Update submodules to latest versions"
 
 ---
 
-## 📊 Example Output
+## Example Output
 
 After running inference, results typically include:
 
@@ -129,7 +130,7 @@ Please review dataset licenses (MSSEG1) before redistribution.
 
 ---
 
-## 🙌 Acknowledgements
+## Acknowledgements
 
 * [mMedcon/mindGlide](https://github.com/mMedcon/mindGlide) for model development
 * [muschellij2/open_ms_data](https://github.com/muschellij2/open_ms_data) for the open dataset
