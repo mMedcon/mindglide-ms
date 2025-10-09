@@ -199,7 +199,9 @@ pip install nibabel matplotlib numpy
  Loading data for patient22...
  Saved visualization to: patient22_comparison.png
 ```
+It would look like the figure below:
 
+![Figure 1](Figure_1.png)
 ---
 
 
@@ -289,7 +291,8 @@ Before running, install the required Python packages:
 ```bash
 pip install nibabel numpy scipy matplotlib
 ```
-
+It would look like the figure below:
+![Figure 2](Figure_2.png)
 ---
 
 ## License
