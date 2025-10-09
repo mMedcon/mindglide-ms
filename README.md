@@ -39,8 +39,6 @@ This ensures all submodules (data and models) are cloned alongside the main repo
 
 ---
 
-If you want, I can also rewrite the **installation and usage section** next to make it GitHub-ready and beginner-friendly. Do you want me to do that?
-
 
 If you already cloned without `--recurse-submodules`, run:
 
@@ -200,6 +198,96 @@ pip install nibabel matplotlib numpy
 ```bash
  Loading data for patient22...
  Saved visualization to: patient22_comparison.png
+```
+
+---
+
+
+## Lesion Segmentation Comparison
+
+After obtaining the **MindGlide-MS** segmentation outputs, you can quantitatively and visually compare them against expert-annotated gold standards using:
+
+```
+models/compare_lesions.py
+```
+
+This script evaluates model performance on a per-patient basis, reporting overlap metrics and generating a visual overlay of MindGlide-predicted vs. expert lesions.
+
+---
+
+### Usage
+
+Run the script from the repository root:
+
+```bash
+python models/compare_results.py --patient patient01
+```
+
+You can also specify a custom dataset path if your data is stored elsewhere:
+
+```bash
+python models/compare_results.py --patient patient01 \
+  --data_dir /path/to/open_ms_data/cross_sectional/MNI
+```
+
+---
+
+### Output Description
+
+The script loads:
+
+* **MindGlide segmentation mask** (`*_mindglide_seg.nii.gz`)
+* **Expert gold-standard lesion mask** (`*_GOLD_STANDARD_*.nii.gz`)
+
+It performs spatial alignment, counts lesion voxels, and reports overlap statistics between the two masks.
+
+---
+
+### Metrics Reported
+
+| Metric                          | Description                                                 |
+| ------------------------------- | ----------------------------------------------------------- |
+| **Expert Ground Truth Lesions** | Total lesion voxels annotated by experts                    |
+| **MindGlide Detected Lesions**  | Total lesion voxels predicted by MindGlide                  |
+| **Overlap (True Positives)**    | Number of voxels correctly identified by MindGlide          |
+| **Lesion Recall (%)**           | Fraction of expert lesions detected by the model            |
+| **Precision (%)**               | Fraction of model-predicted voxels matching the expert mask |
+
+---
+
+### Visualization
+
+The script also generates a 2D overlay of both lesion maps on the middle axial slice:
+
+| Color    | Meaning                     |
+| -------- | --------------------------- |
+| **Gray** | Expert ground truth lesions |
+| **Red**  | MindGlide predicted lesions |
+
+This provides an intuitive side-by-side comparison of segmentation accuracy.
+
+---
+
+### Example Output
+
+```bash
+Expert ground truth lesions: 12,540 voxels
+MindGlide detected lesions: 10,890 voxels
+MindGlide found: 86.8% of expert lesions
+Overlapping voxels: 9,920
+MindGlide precision: 91.1%
+```
+
+A visualization window displaying the overlay will also appear.
+
+---
+
+### Dependencies
+
+Before running, install the required Python packages:
+
+```bash
+pip install nibabel numpy scipy matplotlib
 ```
 
 ---
