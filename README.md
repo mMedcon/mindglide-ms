@@ -125,6 +125,93 @@ After running inference, results typically include:
 
 ---
 
+## Visualization of Segmentation Results
+
+After running the **MindGlide-MS** model, you can visualize the predicted lesion masks against expert-labeled ground truth using the script below:
+
+```
+models/view_results.py
+```
+
+This utility generates a side-by-side comparison of the original MRI, MindGlide segmentation, and gold-standard annotations for any patient in the dataset.
+
+---
+
+### ⚙️ Usage
+
+Run the script from the repository root:
+
+```bash
+python models/view_results.py --patient patient22
+```
+
+You can also specify a custom dataset path if your data is stored elsewhere:
+
+```bash
+python models/view_results.py --patient patient22 \
+  --data_dir /path/to/open_ms_data/cross_sectional/MNI
+```
+
+---
+
+### Output Description
+
+The script loads:
+
+* **FLAIR MRI scan**
+* **MindGlide segmentation output**
+* **Expert gold-standard mask**
+
+It automatically extracts the middle axial slice and displays a 2×2 comparison panel:
+
+| Panel            | Description                                              |
+| ---------------- | -------------------------------------------------------- |
+| **Top-Left**     | Original FLAIR scan                                      |
+| **Top-Right**    | Full MindGlide segmentation (20 brain structure classes) |
+| **Bottom-Left**  | Predicted MS lesions (Class 18, red overlay)             |
+| **Bottom-Right** | Ground truth lesions (green overlay)                     |
+
+The visualization is automatically saved as:
+
+```
+<patient_id>_comparison.png
+```
+
+Example:
+
+```
+patient22_comparison.png
+```
+
+---
+
+### Dependencies
+
+Before running, install the required packages:
+
+```bash
+pip install nibabel matplotlib numpy
+```
+
+---
+
+### Example Output
+
+```bash
+ Loading data for patient22...
+ Saved visualization to: patient22_comparison.png
+```
+
+Optionally, include a representative figure in your repo (e.g., under `assets/`):
+
+```markdown
+![Example Visualization](assets/patient22_comparison.png)
+```
+
+---
+
+Would you like me to also rewrite your **“Installation and Usage”** section next — with consistent Markdown formatting, emojis, and command blocks (so it looks like a professional open-source project page)?
+
 ## License
 
 This project is distributed under the **MIT License**.
