@@ -292,6 +292,7 @@ Before running, install the required Python packages:
 pip install nibabel numpy scipy matplotlib
 ```
 It would look like the figure below:
+
 ![Figure 2](Figure_2.png)
 ---
 
