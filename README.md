@@ -202,15 +202,7 @@ pip install nibabel matplotlib numpy
  Saved visualization to: patient22_comparison.png
 ```
 
-Optionally, include a representative figure in your repo (e.g., under `assets/`):
-
-```markdown
-![Example Visualization](assets/patient22_comparison.png)
-```
-
 ---
-
-Would you like me to also rewrite your **“Installation and Usage”** section next — with consistent Markdown formatting, emojis, and command blocks (so it looks like a professional open-source project page)?
 
 ## License
 
